@@ -1,3 +1,0 @@
-guard 'stitch', :paths => ['app'], :dependencies => [] do
-  watch(%r{^.+\.(js|coffee)$})
-end

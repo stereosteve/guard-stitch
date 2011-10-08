@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency('guard', '>= 0.4')
   s.add_dependency('stitch-rb', '~> 0.0.4')
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = Dir.glob('{lib}/**/*') + %w[Gemfile]
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
