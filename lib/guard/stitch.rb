@@ -5,10 +5,10 @@ require 'guard/watcher'
 require 'stitch-rb'
 
 module Guard
-  module Stitch < Guard
+  class Stitch < Guard
 
     def initialize(watchers = [], options = {})
     end
-    
+
   end
 end

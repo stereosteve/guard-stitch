@@ -4,7 +4,7 @@ require "guard/stitch/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-stitch"
-  s.version     = Guard::Stitch::VERSION
+  s.version     = Guard::StitchVersion::VERSION
   s.authors     = ["stereosteve"]
   s.email       = ["stereosteve@gmail.com"]
   s.homepage    = ""
