@@ -1,5 +1,14 @@
+require 'guard'
+require 'guard/guard'
+require 'guard/watcher'
+
+require 'stitch-rb'
+
 module Guard
-  module Stitch
-    # Your code goes here...
+  module Stitch < Guard
+
+    def initialize(watchers = [], options = {})
+    end
+    
   end
 end
