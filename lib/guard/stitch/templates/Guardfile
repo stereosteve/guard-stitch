@@ -1,3 +1,3 @@
-guard 'stitch', :paths => ['app'], :dependencies => [], :destination => 'public/javascripts/app.stitched.js' do
+guard 'stitch', :paths => ['app/assets/javascripts'], :dependencies => ['public/javascripts/vendor'], :destination => 'public/javascripts/app.stitched.js' do
   watch(%r{^.+\.(js|coffee)$})
 end
