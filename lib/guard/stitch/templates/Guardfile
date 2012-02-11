@@ -1,3 +1,10 @@
+# Recursively load all the sources from a given directory
 guard 'stitch', :paths => ['app/assets/javascripts'], :dependencies => ['public/javascripts/vendor'], :output => 'public/javascripts/app.stitched.js' do
+  watch(%r{^.+\.(js|coffee)$})
+end
+
+# Recursively resolve sources from a given file,
+# dynamically resolving its dependencies
+guard 'stitch', :files => ['app/assets/javascripts/app.js'], :root => 'app/assets/javascripts/', :dependencies => ['public/javascripts/vendor'], :output => 'public/javascripts/app.stitched.js' do
   watch(%r{^.+\.(js|coffee)$})
 end
