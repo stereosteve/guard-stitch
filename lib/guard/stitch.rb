@@ -8,7 +8,9 @@ module Guard
 
     def initialize(watchers = [], options = {})
       super(watchers, options)
+      @root = options.delete(:root)
       @paths = options.delete(:paths)
+      @files = options.delete(:files)
       @dependencies = options.delete(:dependencies)
       @output = options.delete(:output)
     end
@@ -32,7 +34,7 @@ module Guard
     private
     def stitch
       begin
-        js = ::Stitch::Package.new(:paths => @paths, :dependencies => @dependencies).compile
+        js = ::Stitch::Package.new(:root => @root, :paths => @paths, :files => @files, :dependencies => @dependencies).compile
         open(@output, 'w') {|f| f << js}
         UI.info         "Stitched #{@input} to #{@output}"
         Notifier.notify "Stitched #{@input} to #{@output}", :title => 'Stitch'
